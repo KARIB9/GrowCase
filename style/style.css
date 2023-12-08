@@ -1,0 +1,144 @@
+/* ---Style CSS-- */
+
+
+/* --Reset Style CSS-- */
+@import url("reset.css");
+
+/* --Font Family-- */
+
+@import url("/fonts/fonts.css");
+
+
+/* --Root-- */
+:root {
+  /* --Color-- */
+  --color-content-block-one: #000000;
+  --color-content-block-two: #ff0000;
+  --color-hover-link: #a90000;
+  --color-text: #ffffff;
+
+  /* --Fonts-- */
+  --font-family-basic: 'Playfair Display';
+  --font-family-accent: 'Octin Prison Rg';
+}
+
+body {
+  background-color: var(--color-content-block-one);
+  color: var(--color-text);
+  font-family: var(--font-family-basic);
+  font-size: 12px;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.inform-block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 45%; 
+  background-color: var(--color-content-block-one);
+  /* flex-grow: 1; */
+}
+
+.inform-block-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.inform-block-img {
+  background-image: url("../image/growcase-header.svg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.inform-block-link {
+  font-family: var(--font-family-accent);
+  color: var(--color-content-block-two);
+  font-size: 28px;
+  padding: 5px;
+  transition: .5s;
+}
+
+.inform-block-link:hover {
+  color: var(--color-hover-link);
+}
+
+.copyright-text {
+  text-align: center;
+}
+
+.content-blocks {
+  display: grid;
+  grid-template-columns: repeat(2, 320px);
+  justify-content: space-between;
+}
+
+.content-block {
+  aspect-ratio: 1;
+  background-color: var(--color-content-block-one);
+  transition: 1s;
+}
+
+
+.content-block:hover {
+  margin: -10px;
+
+
+}
+
+.content-block:nth-child(4n + 2),
+.content-block:nth-child(4n + 3) {
+  background-color: var(--color-content-block-two);
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1242px) {
+  main {
+    flex-direction: column;
+  }
+  .inform-block {
+    position: static;
+
+  }
+  .content-blocks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .content-block {
+    background-color: var(--color-content-block-two);
+  }
+
+  .content-block:nth-child(odd) {
+    background-color: var(--color-content-block-one);
+  }
+}
+
+
+@media (max-width: 440px) {
+  .content-blocks {
+    grid-template-columns: 1fr;
+  }
+
+  .inform-block-link {
+    font-size: 20px;
+    padding: 3px;
+  }
+
+
+
+}
